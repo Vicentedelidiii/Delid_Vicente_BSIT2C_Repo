@@ -1,13 +1,10 @@
-// declaring variable
-
-
 var randomLoc = Math.floor(Math.random() *5);
 
 var location1 = randomLoc;
-var location2 = location1 +1;
-var location3 = location2 +1;
+var location2 = location1 + 1;
+var location3 = location2 + 1;
 
-var guess
+var guess;
 var hits = 0;
 var guesses = 0;
 
@@ -16,14 +13,14 @@ var isSunk = false;
 // Game logic
 
 while (isSunk == false){
-    guess = prompt("Ready!. Aim!. Fire! (enter number 0-6)");
+    guess = prompt("Ready!, Aim, Fire! (Enter a number 0-6): ");
 
     if (guess == null) {
         alert("Thank you for playing!");
         break;
     }
 
-    if (guess < 0 || guess > 6){
+    if (guess < 0 || guess > 6) {
         alert("Please enter a valid cell number!");
     }else {
         guesses = guesses + 1;
@@ -37,6 +34,10 @@ while (isSunk == false){
         }
         else{
             alert("Miss!")
+            if (guesses >= 10) {
+                alert("You exceeded the maximum attempts!");
+                break;
+            }
         }
     }
 }
